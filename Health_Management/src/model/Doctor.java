@@ -19,6 +19,8 @@ public class Doctor {
     public String getDocName() {
         return docName;
     }
+    
+    
 
     public void setDocName(String docName) {
         this.docName = docName;

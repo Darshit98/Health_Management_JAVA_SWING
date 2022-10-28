@@ -3,8 +3,6 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
  */
 package model;
-
-
 /**
  *
  * @author darshit
@@ -78,10 +76,6 @@ public class Person {
     public void setPerGender(String perGender) {
         this.perGender = perGender;
     }
-
-//    private int calculateAge(LocalDate dob) {
-//        return Period.between(dob,LocalDate.now()).getYears();
-//    }
 
     @Override
     public String toString() {

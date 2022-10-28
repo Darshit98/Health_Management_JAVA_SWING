@@ -6,6 +6,7 @@ package ui;
 
 import javax.swing.JOptionPane;
 import model.DoctorDirectory;
+import model.PatientDirectory;
 import model.Person;
 import model.PersonDirectory;
 /**
@@ -19,6 +20,7 @@ public class adminPersonCreate extends javax.swing.JPanel {
      * @param perList
      */
     PersonDirectory perList;
+    PatientDirectory patDirectory;
     DoctorDirectory docDirectory;  
     
     public adminPersonCreate(PersonDirectory perList) {
@@ -224,13 +226,12 @@ public class adminPersonCreate extends javax.swing.JPanel {
         JOptionPane.showMessageDialog(this, "Person Record Inserted..!!");
         
         
-        adminPatient aPat = new adminPatient();
+        adminPatient aPat = new adminPatient(perList,patDirectory);
         aPat.lblPersonName.setText(txtPName.getText());
-        
         aPat.setVisible(true);
         
 //        Patient pat = new Patient(perList);
-//        pat.setText(name);
+//       pat.setText(name);
         
     }//GEN-LAST:event_btnCreateActionPerformed
 

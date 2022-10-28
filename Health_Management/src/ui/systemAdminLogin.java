@@ -6,6 +6,7 @@ package ui;
 
 import javax.swing.JOptionPane;
 import model.DoctorDirectory;
+import model.PatientDirectory;
 import model.PersonDirectory;
 
 /**
@@ -19,11 +20,17 @@ public class systemAdminLogin extends javax.swing.JFrame {
      */
     PersonDirectory perList;
     DoctorDirectory docDirectory;
+    PatientDirectory patDirectory;
     
+    public systemAdminLogin(PersonDirectory perList, DoctorDirectory docDirectory, PatientDirectory patDirectory) {
+        this(perList, docDirectory);
+    }
+
     public systemAdminLogin(PersonDirectory perList, DoctorDirectory docDirectory) {
         initComponents();
-        this.perList=perList;
-        this.docDirectory=docDirectory;
+        this.perList = perList;
+        this.docDirectory = docDirectory;
+        this.patDirectory = patDirectory;
     }
 
     /**
@@ -113,7 +120,7 @@ public class systemAdminLogin extends javax.swing.JFrame {
         // TODO add your handling code here:
         if("systemadmin".equals(txtUsername.getText()) && "Iamadmin".equals(txtPassword.getText()))
         {
-            adminOperations adminobj = new adminOperations(perList,docDirectory);
+            adminOperations adminobj = new adminOperations(perList,docDirectory,patDirectory);
             adminobj.setVisible(true);
             dispose();
         }

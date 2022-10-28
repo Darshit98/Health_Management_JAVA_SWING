@@ -4,18 +4,41 @@
  */
 package ui;
 
+import javax.swing.JOptionPane;
+import model.Patient;
+import model.PatientDirectory;
+import model.PersonDirectory;
+//import model.PersonDirectory;
+
 /**
  *
  * @author darsh
  */
 public class adminPatient extends javax.swing.JFrame {
 
+
+    public adminPatient(PersonDirectory perList, PatientDirectory patDirectory) {
+    }
+
     /**
      * Creates new form adminPatient
      */
-    public adminPatient() {
-        initComponents();
-    }
+    //PersonDirectory perList;
+    PatientDirectory patDirectory;
+    
+    
+//    public adminPatient(PatientDirectory patDirectory) {
+//        this(patDirectory);
+//    }
+//
+//    public adminPatient(PatientDirectory patDirectory) {
+//        this(patDirectory);
+//    }
+//
+//    public adminPatient(PatientDirectory patDirectory) {
+//        initComponents();
+//        this.patDirectory = patDirectory;
+//    }
 
     /**
      * This method is called from within the constructor to initialize the form.
@@ -26,6 +49,7 @@ public class adminPatient extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
+        rbtnMedIns = new javax.swing.ButtonGroup();
         jPanel1 = new javax.swing.JPanel();
         lblMedIns = new javax.swing.JLabel();
         rbtnYes = new javax.swing.JRadioButton();
@@ -35,7 +59,7 @@ public class adminPatient extends javax.swing.JFrame {
         lblSymptom = new javax.swing.JLabel();
         txtSymptom = new javax.swing.JTextField();
         btnCreate = new javax.swing.JButton();
-        jLabel4 = new javax.swing.JLabel();
+        lblHi = new javax.swing.JLabel();
         lblPersonName = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
@@ -43,8 +67,10 @@ public class adminPatient extends javax.swing.JFrame {
         lblMedIns.setHorizontalAlignment(javax.swing.SwingConstants.RIGHT);
         lblMedIns.setText("Do you have Medical Insurance?");
 
+        rbtnMedIns.add(rbtnYes);
         rbtnYes.setText("Yes");
 
+        rbtnMedIns.add(rbtnNo);
         rbtnNo.setText("No");
 
         lblAllergy.setHorizontalAlignment(javax.swing.SwingConstants.RIGHT);
@@ -54,8 +80,14 @@ public class adminPatient extends javax.swing.JFrame {
         lblSymptom.setText("Symptom");
 
         btnCreate.setText("Create Patient");
+        btnCreate.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnCreateActionPerformed(evt);
+            }
+        });
 
-        jLabel4.setText("Hi");
+        lblHi.setHorizontalAlignment(javax.swing.SwingConstants.RIGHT);
+        lblHi.setText("Hi,");
 
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
@@ -65,7 +97,7 @@ public class adminPatient extends javax.swing.JFrame {
                 .addGap(116, 116, 116)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                     .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addComponent(jLabel4, javax.swing.GroupLayout.PREFERRED_SIZE, 37, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(lblHi, javax.swing.GroupLayout.PREFERRED_SIZE, 37, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addComponent(lblPersonName, javax.swing.GroupLayout.PREFERRED_SIZE, 83, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addComponent(lblMedIns)
@@ -91,7 +123,7 @@ public class adminPatient extends javax.swing.JFrame {
                 .addGap(122, 122, 122)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(lblPersonName, javax.swing.GroupLayout.PREFERRED_SIZE, 16, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jLabel4))
+                    .addComponent(lblHi))
                 .addGap(53, 53, 53)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(lblMedIns)
@@ -124,49 +156,42 @@ public class adminPatient extends javax.swing.JFrame {
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
+    private void btnCreateActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnCreateActionPerformed
+        // TODO add your handling code here:
+        
+        String allergy = txtAllergy.getText();
+        String symptom = txtSymptom.getText();
+        
+        Patient p = patDirectory.addPatient();
+        
+        p.setAllergy(allergy);
+        p.setSymptom(symptom);
+        if(rbtnYes.isSelected()==true)
+            {
+                p.setGender("Yes");
+            }
+        if(rbtnNo.isSelected()==true)
+            {
+                p.setGender("No");
+            }
+        
+        JOptionPane.showMessageDialog(this, "Patient Record Inserted..!!");
+    }//GEN-LAST:event_btnCreateActionPerformed
+
     /**
      * @param args the command line arguments
      */
-    public static void main(String args[]) {
-        /* Set the Nimbus look and feel */
-        //<editor-fold defaultstate="collapsed" desc=" Look and feel setting code (optional) ">
-        /* If Nimbus (introduced in Java SE 6) is not available, stay with the default look and feel.
-         * For details see http://download.oracle.com/javase/tutorial/uiswing/lookandfeel/plaf.html 
-         */
-        try {
-            for (javax.swing.UIManager.LookAndFeelInfo info : javax.swing.UIManager.getInstalledLookAndFeels()) {
-                if ("Nimbus".equals(info.getName())) {
-                    javax.swing.UIManager.setLookAndFeel(info.getClassName());
-                    break;
-                }
-            }
-        } catch (ClassNotFoundException ex) {
-            java.util.logging.Logger.getLogger(adminPatient.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        } catch (InstantiationException ex) {
-            java.util.logging.Logger.getLogger(adminPatient.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        } catch (IllegalAccessException ex) {
-            java.util.logging.Logger.getLogger(adminPatient.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        } catch (javax.swing.UnsupportedLookAndFeelException ex) {
-            java.util.logging.Logger.getLogger(adminPatient.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        }
-        //</editor-fold>
-
-        /* Create and display the form */
-        java.awt.EventQueue.invokeLater(new Runnable() {
-            public void run() {
-                new adminPatient().setVisible(true);
-            }
-        });
-    }
+    
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton btnCreate;
-    private javax.swing.JLabel jLabel4;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JLabel lblAllergy;
+    private javax.swing.JLabel lblHi;
     private javax.swing.JLabel lblMedIns;
     public javax.swing.JLabel lblPersonName;
     private javax.swing.JLabel lblSymptom;
+    private javax.swing.ButtonGroup rbtnMedIns;
     private javax.swing.JRadioButton rbtnNo;
     private javax.swing.JRadioButton rbtnYes;
     private javax.swing.JTextField txtAllergy;

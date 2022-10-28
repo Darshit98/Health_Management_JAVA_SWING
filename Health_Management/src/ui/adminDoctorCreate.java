@@ -73,6 +73,12 @@ public class adminDoctorCreate extends javax.swing.JPanel {
         lblPassword.setHorizontalAlignment(javax.swing.SwingConstants.RIGHT);
         lblPassword.setText("Password:");
 
+        txtDName.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                txtDNameActionPerformed(evt);
+            }
+        });
+
         btnCreate.setText("Create");
         btnCreate.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -165,13 +171,13 @@ public class adminDoctorCreate extends javax.swing.JPanel {
         String username = txtUsername.getText();
         String password = txtPassword.getText();
         
-        Doctor d = docDirectory.createDoctor();
-        
-        d.setDocId(did);
-        d.setDocName(docName);
-        d.setDepartment(department);
-        d.setUsername(username);
-        d.setPassword(password);
+        Doctor d =docDirectory.createDoctor(docName, did, department, username, password);
+//        
+//        d.setDocId(did);
+//        d.setDocName(docName);
+//        d.setDepartment(department);
+//        d.setUsername(username);
+//        d.setPassword(password);
         
         JOptionPane.showMessageDialog(this, "Doctor Record Created..!!");
     }//GEN-LAST:event_btnCreateActionPerformed
@@ -180,7 +186,15 @@ public class adminDoctorCreate extends javax.swing.JPanel {
         // TODO add your handling code here:
         MainLogin  mainobj = new MainLogin(perList, docDirectory);
         mainobj.setVisible(true);
+        
+        adminDoctorCreate aDC = new adminDoctorCreate(docDirectory);
+        aDC.setVisible(false);
+        //mainobj.dispose();
     }//GEN-LAST:event_btnLogoutActionPerformed
+
+    private void txtDNameActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtDNameActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_txtDNameActionPerformed
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables

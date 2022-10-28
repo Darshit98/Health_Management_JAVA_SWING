@@ -1,3 +1,5 @@
+
+
 /*
  * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
  * Click nbfs://nbhost/SystemFileSystem/Templates/GUIForms/JFrame.java to edit this template
@@ -5,6 +7,7 @@
 package ui;
 
 import model.DoctorDirectory;
+import model.PatientDirectory;
 import model.PersonDirectory;
 
 /**
@@ -18,11 +21,17 @@ public class adminOperations extends javax.swing.JFrame {
      */
     PersonDirectory perList;
     DoctorDirectory docDirectory;
+    PatientDirectory patDirectory;
     
-    public adminOperations(PersonDirectory perList, DoctorDirectory docDirectory) {
+//    public adminOperations(PersonDirectory perList, DoctorDirectory docDirectory) {
+//        this(perList, docDirectory, patDirectory);
+//    }
+
+    public adminOperations(PersonDirectory perList, DoctorDirectory docDirectory, PatientDirectory patDirectory) {
         initComponents();
-        this.perList=perList;
-        this.docDirectory=docDirectory;
+        this.perList = perList;
+        this.docDirectory = docDirectory;
+        this.patDirectory = patDirectory;
     }
 
     /**

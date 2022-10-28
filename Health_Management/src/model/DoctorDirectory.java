@@ -28,9 +28,9 @@ public class DoctorDirectory {
 
    
     
-    public Doctor createDoctor()
+    public Doctor createDoctor(String docName, int docId,String department, String username, String password)
     {
-        Doctor newDoctor = new Doctor();
+        Doctor newDoctor = new Doctor(docName, docId, department, username, password);
         docDirectory.add(newDoctor);
         return newDoctor;
     }
