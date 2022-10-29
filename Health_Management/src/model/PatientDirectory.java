@@ -8,15 +8,11 @@ import java.util.ArrayList;
 
 /**
  *
- * @author darshit
+ * @author darsh
  */
 public class PatientDirectory {
     
     private ArrayList<Patient> patDirectory;
-
-    public PatientDirectory() {
-        this.patDirectory = new ArrayList<Patient>();
-    }
 
     public ArrayList<Patient> getPatDirectory() {
         return patDirectory;
@@ -25,12 +21,13 @@ public class PatientDirectory {
     public void setPatDirectory(ArrayList<Patient> patDirectory) {
         this.patDirectory = patDirectory;
     }
-    
-    public Patient addPatient()
-    {
-        Patient pat = new Patient();
-        patDirectory.add(pat);
-        return pat;
+
+    public PatientDirectory(ArrayList<Patient> patDirectory) {
+        this.patDirectory = patDirectory;
     }
+
+    public PatientDirectory() {
+    }
+    
     
 }

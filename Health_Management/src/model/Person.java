@@ -1,40 +1,87 @@
 /*
- * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
- * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
- */
+* To change this license header, choose License Headers in Project Properties.
+* To change this template file, choose Tools | Templates
+* and open the template in the editor.
+*/
+
 package model;
+
 /**
  *
  * @author darshit
  */
 public class Person {
     private String personName;
-    private String perGender;
     private int age;
+    private Patient patient;
+    private int weight;
+    private String community;
+    private String address;
     private String city;
-    private String username;
-    private String password;
+    private boolean hasVitalSigns;
+    private String doctor;
 
-    public Person(String personName, String perGender, int age, String city, String username, String password) {
-        this.personName = personName;
-        this.perGender = perGender;
-        this.age = age;
-        this.city = city;
-        this.username = username;
-        this.password = password;
-    }
-    
-    public Person()
-    {
-        
+//    public Person() {
+//    }
+//
+//    public Person(String personName, int age, Patient patient, int weight, String community, String address, String city, boolean hasVitalSigns, String doctor) {
+//        this.personName = personName;
+//        this.age = age;
+//        this.patient = patient;
+//        this.weight = weight;
+//        this.community = community;
+//        this.address = address;
+//        this.city = city;
+//        this.hasVitalSigns = hasVitalSigns;
+//        this.doctor = doctor;
+//    }
+
+    public int getWeight() {
+        return weight;
     }
 
-    public int getAge() {
-        return age;
+    public void setWeight(int weight) {
+        this.weight = weight;
     }
 
-    public void setAge(int age) {
-        this.age = age;
+    public String getDoctor() {
+        return doctor;
+    }
+
+    public void setDoctor(String doctor) {
+        this.doctor = doctor;
+    }
+
+    public boolean hasVitalSigns() {
+        return hasVitalSigns;
+    }
+
+    public void setHasVitalSigns(boolean hasVitalSigns) {
+        this.hasVitalSigns = hasVitalSigns;
+    }
+
+    public int getweight() {
+        return weight;
+    }
+
+    public void setweight(int weight) {
+        this.weight = weight;
+    }
+
+    public String getCommunity() {
+        return community;
+    }
+
+    public void setCommunity(String community) {
+        this.community = community;
+    }
+
+    public String getAddress() {
+        return address;
+    }
+
+    public void setAddress(String address) {
+        this.address = address;
     }
 
     public String getCity() {
@@ -44,42 +91,34 @@ public class Person {
     public void setCity(String city) {
         this.city = city;
     }
-
-    public String getUsername() {
-        return username;
-    }
-
-    public void setUsername(String username) {
-        this.username = username;
-    }
-
-    public String getPassword() {
-        return password;
-    }
-
-    public void setPassword(String password) {
-        this.password = password;
-    }
     
     public String getPersonName() {
         return personName;
     }
-
+    
     public void setPersonName(String personName) {
         this.personName = personName;
     }
-
-    public String getPerGender() {
-        return perGender;
+    
+    public int getAge() {
+        return age;
     }
-
-    public void setPerGender(String perGender) {
-        this.perGender = perGender;
+    
+    public void setAge(int age) {
+        this.age = age;
     }
-
+    
+    public Patient getPatient() {
+        return patient;
+    }
+    
+    public void setPatient(Patient patient) {
+        this.patient = patient;
+    }
+    
     @Override
-    public String toString() {
-        return personName;
+    public String toString()
+    {
+        return this.personName;
     }
-   
 }

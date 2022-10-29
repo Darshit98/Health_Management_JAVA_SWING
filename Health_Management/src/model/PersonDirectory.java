@@ -1,7 +1,3 @@
-/*
- * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
- * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
- */
 package model;
 
 import java.util.ArrayList;
@@ -12,29 +8,58 @@ import java.util.ArrayList;
  */
 public class PersonDirectory {
     
-    private ArrayList<Person> perList;
+    private ArrayList<Person> personDirectory;
     
     public PersonDirectory() {
-        this.perList = new ArrayList<Person>();
-    }
-
-    public ArrayList<Person> getPerList() {
-        return perList;
-    }
-
-    public void setPerList(ArrayList<Person> perList) {
-        this.perList = perList;
-    }
-
-    public Person addNewPerson()
-    {
-        Person newPerson = new Person();
-        perList.add(newPerson);
-        return newPerson;
+        personDirectory = new ArrayList<>();
     }
     
-    public void deletePerson(Person p)
-    {
-        perList.remove(p);
+    public ArrayList<Person> getPersonHistory() {
+        return personDirectory;
     }
+    
+    public void setPersonHistory(ArrayList<Person> personHistory) {
+        this.personDirectory = personHistory;
+    }
+    
+    public Person createAndAddPerson() {
+        Person person = new Person();
+        personDirectory.add(person);
+        return person;
+    }
+    
+    public void deletePerson(Person person) {
+        personDirectory.remove(person);
+    }
+    
+    public ArrayList<Person> searchPatient(String key)
+    {
+        ArrayList<Person> searchPatientDirectory = new ArrayList();
+        for(Person person: personDirectory)
+        {
+            if(person.getPersonName().toLowerCase().startsWith(key.toLowerCase()))
+            {
+                if(person.getPatient()!=null)
+                {
+                    searchPatientDirectory.add(person);
+                }
+            }
+        }
+        return searchPatientDirectory;
+    }
+    
+    public ArrayList<Person> searchPerson(String key)
+    {
+        ArrayList<Person> searchPersonDirectory = new ArrayList();
+        for(Person person: personDirectory)
+        {
+            if(person.getPersonName().toLowerCase().startsWith(key.toLowerCase()))
+            {
+                searchPersonDirectory.add(person);
+            }
+        }
+        return searchPersonDirectory;
+    }
+    
+    
 }
