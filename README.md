@@ -10,13 +10,13 @@ The scope of the assignment is :
 
 ## Class Diagram
 <br>
-<img src="Health_Managament_ClassDiagram.jpeg" width="1000" height="500"/>
+<img src="Health_Managament_ClassDiagram.jpg" width="1000" height="500"/>
 <br><br>
 
 ## Sequence Diagram
 
 <br>
-<img src="Health_Managament_SequenceDiagram.jpeg" width="1000" height="500"/>
+<img src="Health_Managament_SequenceDiagram.jpg" width="1000" height="500"/>
 <br><br>
 
 ## Tools Required
