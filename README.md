@@ -2,7 +2,6 @@
 
 Created a java-swing based Health Management Portal for assignment (INFO-1500)
 The scope of the assignment is :
-
 - For people to find hospitals in their community
 
 - To perform CRUD operations on person, patient, community and their encounters
