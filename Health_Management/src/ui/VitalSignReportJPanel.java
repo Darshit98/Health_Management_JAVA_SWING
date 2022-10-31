@@ -87,26 +87,24 @@ public class VitalSignReportJPanel extends javax.swing.JPanel {
             row[0] = "Roxbury";
             row[1]= ""+totalA;
             row[2]= ""+countA;
-           // row[3] = (countA/totalA)*100;
+          
             model.addRow(row);
             row[0] = "Fenway";
             row[1]= ""+totalB;
             row[2]= ""+countB;
-           // row[3] = (countB/totalB)*100;
+           
             model.addRow(row);
             row[0] = "Downtown";
             row[1]= ""+totalC;
             row[2]= ""+countC;
-           // row[3] = (countC/totalC)*100;
+           
             model.addRow(row);
             row[0] = "Kenmore";
             row[1]= ""+totalD;
             row[2]= ""+countD;
-           // row[3] = (countD/totalD)*100;
+          
             model.addRow(row);
         
-        
-        //System.out.println("total number of patients is "+count);
     }
     
     
