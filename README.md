@@ -13,6 +13,12 @@ The scope of the assignment is :
 
 - For the System Admin to perform CRUD operations on all the other admins
 
+## Tools Required
+
+Netbeans, java developer kit
+
+## NUID: 002762097
+
 ## Class Diagram
 <br>
 <img src="Health_Managament_ClassDiagram.jpg" width="1000" height="500"/>
@@ -21,11 +27,5 @@ The scope of the assignment is :
 ## Sequence Diagram
 
 <br>
-<img src="Health_Managament_SequenceDiagram.jpg" width="1000" height="500"/>
+<img src="HealthManagement_Seq_diag.jpg" width="1000" height="500"/>
 <br><br>
-
-## Tools Required
-
-Netbeans, java developer kit
-
-## NUID: 002762097
