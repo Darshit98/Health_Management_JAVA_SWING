@@ -3,7 +3,7 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package ui.patient;
+package ui;
 
 import java.awt.CardLayout;
 import model.Person;
@@ -125,9 +125,9 @@ public class VitalSignReportJPanel extends javax.swing.JPanel {
         jLabel1 = new javax.swing.JLabel();
         btnLogout = new javax.swing.JButton();
 
-        setBackground(new java.awt.Color(0, 204, 204));
+        setBackground(new java.awt.Color(102, 102, 102));
 
-        vieReportJTable.setBackground(new java.awt.Color(102, 102, 255));
+        vieReportJTable.setBackground(new java.awt.Color(204, 204, 204));
         vieReportJTable.setFont(new java.awt.Font("Comic Sans MS", 0, 12)); // NOI18N
         vieReportJTable.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
@@ -140,6 +140,7 @@ public class VitalSignReportJPanel extends javax.swing.JPanel {
         jScrollPane1.setViewportView(vieReportJTable);
 
         jLabel1.setFont(new java.awt.Font("Comic Sans MS", 0, 18)); // NOI18N
+        jLabel1.setForeground(new java.awt.Color(255, 255, 255));
         jLabel1.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLabel1.setText("Community Details");
         jLabel1.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);

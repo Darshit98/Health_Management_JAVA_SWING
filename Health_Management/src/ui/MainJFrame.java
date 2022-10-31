@@ -5,14 +5,9 @@
 */
 package ui;
 
-import ui.patient.PatientManagerWorkAreaJPanel;
 import model.PersonDirectory;
 import java.awt.CardLayout;
 import javax.swing.JOptionPane;
-import ui.patient.ManagePatientsJPanel;
-import ui.patient.ManageVitalSignsJPanel;
-import ui.patient.VitalSignReportJPanel;
-import ui.person.ManagePersonsJPanel;
 
 /**
  *
@@ -65,7 +60,7 @@ public class MainJFrame extends javax.swing.JFrame {
         jSplitPane1.setMinimumSize(new java.awt.Dimension(700, 700));
         jSplitPane1.setPreferredSize(new java.awt.Dimension(700, 700));
 
-        leftJPanel.setBackground(new java.awt.Color(255, 255, 102));
+        leftJPanel.setBackground(new java.awt.Color(0, 204, 204));
         leftJPanel.setFont(new java.awt.Font("Comic Sans MS", 0, 12)); // NOI18N
         leftJPanel.setMinimumSize(new java.awt.Dimension(200, 700));
         leftJPanel.setPreferredSize(new java.awt.Dimension(200, 700));
@@ -96,7 +91,7 @@ public class MainJFrame extends javax.swing.JFrame {
 
         jLabel1.setFont(new java.awt.Font("Comic Sans MS", 0, 18)); // NOI18N
         jLabel1.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        jLabel1.setText("Select");
+        jLabel1.setText("Select Directory");
 
         btnEncounter.setFont(new java.awt.Font("Comic Sans MS", 0, 12)); // NOI18N
         btnEncounter.setText("Encounter Details");
@@ -126,7 +121,7 @@ public class MainJFrame extends javax.swing.JFrame {
                     .addComponent(managePersonsJButton, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                     .addComponent(patientManagerJButton, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                     .addComponent(btnEncounter, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(btnDashboard, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                    .addComponent(btnDashboard, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, 188, Short.MAX_VALUE))
                 .addContainerGap())
         );
         leftJPanelLayout.setVerticalGroup(
@@ -136,13 +131,13 @@ public class MainJFrame extends javax.swing.JFrame {
                 .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 44, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(27, 27, 27)
                 .addComponent(managePersonsJButton, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addGap(18, 18, 18)
+                .addGap(18, 18, Short.MAX_VALUE)
                 .addComponent(patientManagerJButton, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addGap(18, 18, 18)
+                .addGap(18, 18, Short.MAX_VALUE)
                 .addComponent(btnEncounter, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addGap(18, 18, 18)
+                .addGap(18, 18, Short.MAX_VALUE)
                 .addComponent(btnDirectory, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addGap(18, 18, 18)
+                .addGap(18, 18, Short.MAX_VALUE)
                 .addComponent(btnDashboard, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addGap(338, 338, 338))
         );
@@ -153,31 +148,42 @@ public class MainJFrame extends javax.swing.JFrame {
         userProcessContainer.setPreferredSize(new java.awt.Dimension(500, 700));
         userProcessContainer.setLayout(new java.awt.CardLayout());
 
-        jPanel1.setBackground(new java.awt.Color(51, 0, 255));
+        jPanel1.setBackground(new java.awt.Color(102, 102, 102));
         jPanel1.setFont(new java.awt.Font("Comic Sans MS", 0, 12)); // NOI18N
         jPanel1.setMaximumSize(new java.awt.Dimension(600, 500));
         jPanel1.setMinimumSize(new java.awt.Dimension(600, 500));
         jPanel1.setPreferredSize(new java.awt.Dimension(600, 500));
+        jPanel1.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        lblTitle.setFont(new java.awt.Font("Comic Sans MS", 0, 24)); // NOI18N
+        lblTitle.setBackground(new java.awt.Color(255, 255, 102));
+        lblTitle.setFont(new java.awt.Font("Comic Sans MS", 1, 18)); // NOI18N
         lblTitle.setForeground(new java.awt.Color(255, 255, 255));
         lblTitle.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        lblTitle.setText("Login Screen");
+        lblTitle.setText("Hospital Management Portal");
+        jPanel1.add(lblTitle, new org.netbeans.lib.awtextra.AbsoluteConstraints(6, 60, 600, 50));
 
+        userType.setFont(new java.awt.Font("Comic Sans MS", 0, 12)); // NOI18N
         userType.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "System Admin", "Hospital Admin", "Community Admin", "Doctor", "Person Login" }));
         userType.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 userTypeActionPerformed(evt);
             }
         });
+        jPanel1.add(userType, new org.netbeans.lib.awtextra.AbsoluteConstraints(261, 128, -1, -1));
 
-        lblUsername.setFont(new java.awt.Font("Comic Sans MS", 0, 12)); // NOI18N
+        lblUsername.setBackground(new java.awt.Color(255, 255, 102));
+        lblUsername.setFont(new java.awt.Font("Comic Sans MS", 1, 12)); // NOI18N
         lblUsername.setForeground(new java.awt.Color(255, 255, 255));
         lblUsername.setText("Username");
+        jPanel1.add(lblUsername, new org.netbeans.lib.awtextra.AbsoluteConstraints(195, 168, -1, 22));
 
-        lblPassword.setFont(new java.awt.Font("Comic Sans MS", 0, 12)); // NOI18N
+        lblPassword.setBackground(new java.awt.Color(255, 255, 102));
+        lblPassword.setFont(new java.awt.Font("Comic Sans MS", 1, 12)); // NOI18N
         lblPassword.setForeground(new java.awt.Color(255, 255, 255));
         lblPassword.setText("Password");
+        jPanel1.add(lblPassword, new org.netbeans.lib.awtextra.AbsoluteConstraints(195, 208, 54, 22));
+        jPanel1.add(txtPassword, new org.netbeans.lib.awtextra.AbsoluteConstraints(261, 208, 133, -1));
+        jPanel1.add(txtUsername, new org.netbeans.lib.awtextra.AbsoluteConstraints(261, 168, 133, -1));
 
         btnLogin.setFont(new java.awt.Font("Comic Sans MS", 0, 12)); // NOI18N
         btnLogin.setText("Login");
@@ -186,66 +192,13 @@ public class MainJFrame extends javax.swing.JFrame {
                 btnLoginActionPerformed(evt);
             }
         });
+        jPanel1.add(btnLogin, new org.netbeans.lib.awtextra.AbsoluteConstraints(261, 248, -1, -1));
 
-        jLabel2.setFont(new java.awt.Font("Comic Sans MS", 0, 12)); // NOI18N
+        jLabel2.setBackground(new java.awt.Color(255, 255, 102));
+        jLabel2.setFont(new java.awt.Font("Comic Sans MS", 1, 12)); // NOI18N
         jLabel2.setForeground(new java.awt.Color(255, 255, 255));
         jLabel2.setText("Login As:");
-
-        javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
-        jPanel1.setLayout(jPanel1Layout);
-        jPanel1Layout.setHorizontalGroup(
-            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel1Layout.createSequentialGroup()
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addContainerGap()
-                        .addComponent(lblTitle, javax.swing.GroupLayout.PREFERRED_SIZE, 551, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addGap(195, 195, 195)
-                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
-                                .addGroup(jPanel1Layout.createSequentialGroup()
-                                    .addComponent(jLabel2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                    .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                                    .addComponent(userType, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                                .addGroup(jPanel1Layout.createSequentialGroup()
-                                    .addComponent(lblUsername)
-                                    .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                                    .addComponent(txtUsername, javax.swing.GroupLayout.PREFERRED_SIZE, 133, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                            .addGroup(jPanel1Layout.createSequentialGroup()
-                                .addComponent(lblPassword, javax.swing.GroupLayout.PREFERRED_SIZE, 53, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addComponent(btnLogin)
-                                    .addComponent(txtPassword, javax.swing.GroupLayout.PREFERRED_SIZE, 133, javax.swing.GroupLayout.PREFERRED_SIZE))))))
-                .addContainerGap(43, Short.MAX_VALUE))
-        );
-
-        jPanel1Layout.linkSize(javax.swing.SwingConstants.HORIZONTAL, new java.awt.Component[] {jLabel2, lblPassword, lblUsername});
-
-        jPanel1Layout.setVerticalGroup(
-            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel1Layout.createSequentialGroup()
-                .addGap(60, 60, 60)
-                .addComponent(lblTitle, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(18, 18, 18)
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(userType, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jLabel2))
-                .addGap(18, 18, 18)
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(lblUsername)
-                    .addComponent(txtUsername, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(18, 18, 18)
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(txtPassword, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(lblPassword))
-                .addGap(18, 18, 18)
-                .addComponent(btnLogin)
-                .addContainerGap(427, Short.MAX_VALUE))
-        );
-
-        jPanel1Layout.linkSize(javax.swing.SwingConstants.VERTICAL, new java.awt.Component[] {jLabel2, lblPassword, lblUsername, txtPassword, txtUsername});
+        jPanel1.add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(195, 128, 54, 22));
 
         userProcessContainer.add(jPanel1, "card2");
 
@@ -293,10 +246,6 @@ public class MainJFrame extends javax.swing.JFrame {
         btnDirectory.setVisible(false);
         btnLogin.setEnabled(true);
         
-        //managePersonsJButton.setVisible(true);
-        //jLabel1.setVisible(true);
-        
-        
          if ("Person Login".equals(userType.getSelectedItem().toString())) {
             txtPassword.setEnabled(false);
             txtUsername.setEnabled(false);
@@ -307,15 +256,7 @@ public class MainJFrame extends javax.swing.JFrame {
             txtUsername.setEnabled(true);
             
         }
-//         if (userType.getSelectedItem().toString() == "System Admin"){
-//             
-//         }
-//         if (userType.getSelectedItem().toString() == "System Admin"){
-//             
-//         }
-//         if (userType.getSelectedItem().toString() == "Community Admin"){
-//             
-//         }
+
     }//GEN-LAST:event_userTypeActionPerformed
 
     private void btnLoginActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnLoginActionPerformed
@@ -327,10 +268,6 @@ public class MainJFrame extends javax.swing.JFrame {
         jLabel1.setVisible(false);
         btnEncounter.setVisible(false);
         btnLogin.setEnabled(true);
-        /*managePersonsJButton.setVisible(true);
-        jLabel1.setVisible(true);
-        patientManagerJButton.setVisible(true);
-        vitalSignReportJButton.setVisible(true);*/
             
         if ("Person Login".equals(userType.getSelectedItem().toString())) {
             txtPassword.setEnabled(false);
@@ -369,12 +306,6 @@ public class MainJFrame extends javax.swing.JFrame {
             if ("Community Admin".equals(userType.getSelectedItem().toString())){
              if (txtUsername.getText().matches("communityadmin") && txtPassword.getText().matches("community123")) {
                 JOptionPane.showMessageDialog(this, "Community Admin login successfull");
-                //managePersonsJButton.setVisible(false);
-//                jLabel1.setVisible(true);
-//                btnDashboard.setVisible(true);
-//                patientManagerJButton.setVisible(false);
-//                
-//                patientManagerJButton.setEnabled(false);
 
                 VitalSignReportJPanel report = new VitalSignReportJPanel(userProcessContainer, personDirectory);
                 userProcessContainer.add("report",report);

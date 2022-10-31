@@ -3,7 +3,7 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package ui.person;
+package ui;
 
 import model.IntegerVerifier;
 import model.StringVerifier;
@@ -66,19 +66,22 @@ public class ViewUpdatePersonDetailsJPanel extends javax.swing.JPanel {
         editJButton = new javax.swing.JButton();
         saveJButton = new javax.swing.JButton();
 
-        setBackground(new java.awt.Color(0, 255, 204));
+        setBackground(new java.awt.Color(102, 102, 102));
         setMinimumSize(new java.awt.Dimension(500, 700));
         setPreferredSize(new java.awt.Dimension(500, 700));
 
         AgeJLabel.setFont(new java.awt.Font("Comic Sans MS", 0, 12)); // NOI18N
+        AgeJLabel.setForeground(new java.awt.Color(255, 255, 255));
         AgeJLabel.setHorizontalAlignment(javax.swing.SwingConstants.RIGHT);
         AgeJLabel.setText("Age:");
 
         jLabel1.setFont(new java.awt.Font("Comic Sans MS", 1, 18)); // NOI18N
+        jLabel1.setForeground(new java.awt.Color(255, 255, 255));
         jLabel1.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLabel1.setText("Patient Details");
 
         patientNameJLabel.setFont(new java.awt.Font("Comic Sans MS", 0, 12)); // NOI18N
+        patientNameJLabel.setForeground(new java.awt.Color(255, 255, 255));
         patientNameJLabel.setHorizontalAlignment(javax.swing.SwingConstants.RIGHT);
         patientNameJLabel.setText("Patient Name:");
 
@@ -131,7 +134,7 @@ public class ViewUpdatePersonDetailsJPanel extends javax.swing.JPanel {
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(jLabel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                     .addGroup(layout.createSequentialGroup()
-                        .addComponent(backJButton)
+                        .addComponent(backJButton, javax.swing.GroupLayout.PREFERRED_SIZE, 33, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addGap(0, 0, Short.MAX_VALUE)))
                 .addContainerGap())
         );

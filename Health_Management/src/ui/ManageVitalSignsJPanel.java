@@ -3,7 +3,7 @@
 * To change this template file, choose Tools | Templates
 * and open the template in the editor.
 */
-package ui.patient;
+package ui;
 
 import model.StringVerifier;
 import model.Patient;
@@ -145,7 +145,7 @@ public class ManageVitalSignsJPanel extends javax.swing.JPanel {
         jLabel1 = new javax.swing.JLabel();
         jLabel2 = new javax.swing.JLabel();
 
-        setBackground(new java.awt.Color(0, 204, 204));
+        setBackground(new java.awt.Color(102, 102, 102));
         setMinimumSize(new java.awt.Dimension(500, 700));
         setPreferredSize(new java.awt.Dimension(500, 700));
 
@@ -181,6 +181,7 @@ public class ManageVitalSignsJPanel extends javax.swing.JPanel {
             }
         });
 
+        viewPatientsJTable.setBackground(new java.awt.Color(204, 204, 204));
         viewPatientsJTable.setFont(new java.awt.Font("Comic Sans MS", 0, 12)); // NOI18N
         viewPatientsJTable.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
@@ -211,6 +212,7 @@ public class ManageVitalSignsJPanel extends javax.swing.JPanel {
             }
         });
 
+        viewVitalSignsJTable.setBackground(new java.awt.Color(204, 204, 204));
         viewVitalSignsJTable.setFont(new java.awt.Font("Comic Sans MS", 0, 12)); // NOI18N
         viewVitalSignsJTable.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
@@ -256,7 +258,7 @@ public class ManageVitalSignsJPanel extends javax.swing.JPanel {
         searchBoxJTextField.setFont(new java.awt.Font("Comic Sans MS", 0, 12)); // NOI18N
 
         searchPatientJButton.setFont(new java.awt.Font("Comic Sans MS", 0, 12)); // NOI18N
-        searchPatientJButton.setText("Search Patient");
+        searchPatientJButton.setText("Search Patient By Name");
         searchPatientJButton.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 searchPatientJButtonActionPerformed(evt);
@@ -272,10 +274,12 @@ public class ManageVitalSignsJPanel extends javax.swing.JPanel {
         });
 
         jLabel1.setFont(new java.awt.Font("Comic Sans MS", 0, 18)); // NOI18N
+        jLabel1.setForeground(new java.awt.Color(255, 255, 255));
         jLabel1.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLabel1.setText("Patient Details");
 
         jLabel2.setFont(new java.awt.Font("Comic Sans MS", 0, 18)); // NOI18N
+        jLabel2.setForeground(new java.awt.Color(255, 255, 255));
         jLabel2.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLabel2.setText("Patient Status");
 
@@ -284,34 +288,36 @@ public class ManageVitalSignsJPanel extends javax.swing.JPanel {
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addComponent(jLabel2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-            .addComponent(jScrollPane2)
-            .addGroup(layout.createSequentialGroup()
-                .addComponent(viewVitalSignJButton)
-                .addGap(18, 36, Short.MAX_VALUE)
-                .addComponent(editVitalSignsJButton, javax.swing.GroupLayout.PREFERRED_SIZE, 103, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(18, 36, Short.MAX_VALUE)
-                .addComponent(deleteVitalSignJButton)
-                .addGap(18, 37, Short.MAX_VALUE)
-                .addComponent(refreshVitalSignsJButton, javax.swing.GroupLayout.PREFERRED_SIZE, 107, javax.swing.GroupLayout.PREFERRED_SIZE))
-            .addGroup(layout.createSequentialGroup()
-                .addContainerGap()
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jLabel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(jScrollPane1)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                    .addGroup(javax.swing.GroupLayout.Alignment.LEADING, layout.createSequentialGroup()
+                        .addComponent(viewVitalSignJButton)
+                        .addGap(18, 35, Short.MAX_VALUE)
+                        .addComponent(editVitalSignsJButton)
+                        .addGap(18, 35, Short.MAX_VALUE)
+                        .addComponent(deleteVitalSignJButton)
+                        .addGap(18, 35, Short.MAX_VALUE)
+                        .addComponent(refreshVitalSignsJButton, javax.swing.GroupLayout.PREFERRED_SIZE, 130, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addGroup(layout.createSequentialGroup()
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(searchPatientJButton)
-                            .addComponent(addVitalSignsJButton))
-                        .addGap(18, 18, Short.MAX_VALUE)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addGroup(layout.createSequentialGroup()
-                                .addComponent(displayDetailsJButton, javax.swing.GroupLayout.PREFERRED_SIZE, 114, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addContainerGap()
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                            .addComponent(jScrollPane2)
+                            .addComponent(jLabel1, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                            .addComponent(jScrollPane1, javax.swing.GroupLayout.Alignment.LEADING)
+                            .addGroup(javax.swing.GroupLayout.Alignment.LEADING, layout.createSequentialGroup()
+                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addComponent(searchPatientJButton)
+                                    .addComponent(addVitalSignsJButton))
                                 .addGap(18, 18, Short.MAX_VALUE)
-                                .addComponent(refreshPatientsJButton))
-                            .addComponent(searchBoxJTextField)))
-                    .addGroup(layout.createSequentialGroup()
-                        .addComponent(backJButton, javax.swing.GroupLayout.PREFERRED_SIZE, 37, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(0, 0, Short.MAX_VALUE)))
+                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addGroup(layout.createSequentialGroup()
+                                        .addComponent(displayDetailsJButton, javax.swing.GroupLayout.PREFERRED_SIZE, 114, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                        .addGap(18, 18, Short.MAX_VALUE)
+                                        .addComponent(refreshPatientsJButton))
+                                    .addComponent(searchBoxJTextField)))
+                            .addGroup(javax.swing.GroupLayout.Alignment.LEADING, layout.createSequentialGroup()
+                                .addComponent(backJButton, javax.swing.GroupLayout.PREFERRED_SIZE, 37, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addGap(0, 0, Short.MAX_VALUE)))))
                 .addContainerGap())
         );
         layout.setVerticalGroup(

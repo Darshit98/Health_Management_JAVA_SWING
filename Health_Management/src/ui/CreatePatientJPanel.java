@@ -3,7 +3,7 @@
 * To change this template file, choose Tools | Templates
 * and open the template in the editor.
 */
-package ui.patient;
+package ui;
 
 import model.StringVerifier;
 import model.Patient;
@@ -58,10 +58,12 @@ public class CreatePatientJPanel extends javax.swing.JPanel {
         patientIDJTextField = new javax.swing.JTextField();
         backJButton = new javax.swing.JButton();
 
-        setBackground(new java.awt.Color(0, 204, 0));
+        setBackground(new java.awt.Color(102, 102, 102));
+        setForeground(new java.awt.Color(255, 255, 255));
         setMinimumSize(new java.awt.Dimension(500, 700));
         setPreferredSize(new java.awt.Dimension(500, 700));
 
+        addPatientJButton.setFont(new java.awt.Font("Comic Sans MS", 0, 12)); // NOI18N
         addPatientJButton.setText("Add Patient");
         addPatientJButton.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -70,18 +72,22 @@ public class CreatePatientJPanel extends javax.swing.JPanel {
         });
 
         jLabel1.setFont(new java.awt.Font("Comic Sans MS", 0, 18)); // NOI18N
+        jLabel1.setForeground(new java.awt.Color(255, 255, 255));
         jLabel1.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        jLabel1.setText("Patient Details");
+        jLabel1.setText("Create Patient");
 
         patientIDJLabel.setFont(new java.awt.Font("Comic Sans MS", 0, 12)); // NOI18N
+        patientIDJLabel.setForeground(new java.awt.Color(255, 255, 255));
         patientIDJLabel.setHorizontalAlignment(javax.swing.SwingConstants.RIGHT);
         patientIDJLabel.setText("Patient ID");
 
         primaryDocNameJLabel.setFont(new java.awt.Font("Comic Sans MS", 0, 12)); // NOI18N
+        primaryDocNameJLabel.setForeground(new java.awt.Color(255, 255, 255));
         primaryDocNameJLabel.setHorizontalAlignment(javax.swing.SwingConstants.RIGHT);
         primaryDocNameJLabel.setText(" Doctor Name");
 
         prefferedPharmacyJLabel.setFont(new java.awt.Font("Comic Sans MS", 0, 12)); // NOI18N
+        prefferedPharmacyJLabel.setForeground(new java.awt.Color(255, 255, 255));
         prefferedPharmacyJLabel.setHorizontalAlignment(javax.swing.SwingConstants.RIGHT);
         prefferedPharmacyJLabel.setText("Preffered Pharmacy");
 
@@ -148,7 +154,7 @@ public class CreatePatientJPanel extends javax.swing.JPanel {
                             .addComponent(prefferedPharmacyJTextField, javax.swing.GroupLayout.PREFERRED_SIZE, 22, javax.swing.GroupLayout.PREFERRED_SIZE))))
                 .addGap(18, 18, 18)
                 .addComponent(addPatientJButton)
-                .addContainerGap(479, Short.MAX_VALUE))
+                .addContainerGap(477, Short.MAX_VALUE))
         );
 
         layout.linkSize(javax.swing.SwingConstants.VERTICAL, new java.awt.Component[] {patientIDJLabel, patientIDJTextField, prefferedPharmacyJLabel, prefferedPharmacyJTextField, primaryDocNameJLabel, primaryDocNameJTextField});
