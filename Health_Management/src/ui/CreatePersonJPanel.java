@@ -272,8 +272,7 @@ public class CreatePersonJPanel extends javax.swing.JPanel {
     }
     private Boolean checkBlankInput()
     {
-        if(pesonNameJTextField.getText().length()==0
-                ||personAgeJTextField.getText().length()==0)
+        if(pesonNameJTextField.getText().length()==0 ||personAgeJTextField.getText().length()==0)
         {
             return false;
         }
@@ -306,9 +305,9 @@ public class CreatePersonJPanel extends javax.swing.JPanel {
             if(personCommunityjComboBox.getSelectedItem().equals("Fenway"))
             {
                 listHospital.removeAllItems();
-                listHospital.addItem("ABC Hospital");
-                listHospital.addItem("XYZ Hospital");
-                listHospital.addItem("PQR Hospital");
+                listHospital.addItem("Boston Med Hospital");
+                listHospital.addItem("City Hospital");
+                listHospital.addItem("Mass Hospital");
             }
             else
             {
